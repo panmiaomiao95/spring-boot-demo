@@ -13,4 +13,8 @@ public interface UserMapper {
     UserModel getOne(Integer id);
 
     List<UserModel> findAll();
+
+    void deleteById(Integer id);
+
+    void insert(UserModel userModel);
 }

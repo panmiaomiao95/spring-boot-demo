@@ -22,4 +22,18 @@
         SELECT  * FROM bp_user
     </select>
 
+    <delete id="deleteById" parameterType="Integer" >
+        DELETE FROM
+        bp_user
+        WHERE
+        id =#{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.demo.entity.UserModel" >
+        INSERT INTO
+        bp_user
+        (username,passworld,age,birthday,hobby)
+        VALUES
+        (#{username}, #{passworld}, #{age},#{birthday},#{hobby})
+    </insert>
 </mapper>
