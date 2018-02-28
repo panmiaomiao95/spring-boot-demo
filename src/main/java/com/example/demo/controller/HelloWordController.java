@@ -70,7 +70,7 @@ public class HelloWordController {
     @ResponseBody
     public ResultEntity findById(){
         ResultEntity resultEntity=new ResultEntity();
-        UserModel userModel=userMapper.getOne(12054);
+        UserModel userModel=userMapper.getOne(12055);
         resultEntity.setData(userModel);
         return  resultEntity;
     }
