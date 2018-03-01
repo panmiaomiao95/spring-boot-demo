@@ -7,10 +7,7 @@ import com.example.demo.model.ResultEntity;
 import com.example.demo.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
@@ -28,7 +25,7 @@ public class HelloWordController {
     @Autowired
     private UserMapper userMapper;
 
-    @RequestMapping("hello_word")
+    @RequestMapping(value = {"hello_word"} ,method= RequestMethod.GET )
     public String index() {
         return "hello";
     }
@@ -38,7 +35,7 @@ public class HelloWordController {
      * @param session
      * @return
      */
-    @RequestMapping("uid")
+    @RequestMapping(value = {"uid"},method = RequestMethod.PUT)
     @ResponseBody
     public Object uid(HttpSession session) {
         UUID uid = (UUID) session.getAttribute("uid");
