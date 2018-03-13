@@ -24,9 +24,12 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
     show-sql: true
   thymeleaf:
     cache: false
+    mode: LEGACYHTML5
 mybatis:
   type-aliases-package: com.example.demo.entity
   config-location: classpath:mybatis/mybatis_config.xml
