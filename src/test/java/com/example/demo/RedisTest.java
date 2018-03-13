@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.entity.UserModel;
+import com.example.demo.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +25,9 @@ public class RedisTest {
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private RedisTemplate redisTemplate;
+    @Autowired
+    private UserService userService;
+
     @Test
     public void test() throws Exception {
         stringRedisTemplate.opsForValue().set("aaa", "111");
@@ -44,5 +49,10 @@ public class RedisTest {
             System.out.println("exists is false");
         }
         // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
+    }
+
+    @Test
+    public void testRedis(){
+        UserModel byId = userService.findById(12055);
     }
 }
